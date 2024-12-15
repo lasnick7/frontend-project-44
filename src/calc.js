@@ -48,7 +48,6 @@ function checkAnswer(answer) {
     console.log(`Let's try again, ${name}!`);
     return false;
   }
-  
 }
 
 export { checkAnswer };
