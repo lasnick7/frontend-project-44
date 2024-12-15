@@ -14,7 +14,7 @@ var randomNumber2;
 var answer;
 var question;
 function askQuestion() {
-  console.log('What is the result of the expression?');
+  console.log('Find the greatest common divisor of given numbers.');
   randomNumber1 = Math.floor(Math.random() * 100) + 1;
   randomNumber2 = Math.floor(Math.random() * 100) + 1;
   question = `${randomNumber1} ${randomNumber2}`;
@@ -63,4 +63,4 @@ function playGame() {
     console.log(`Congratulations, ${name}!`);
   }
 
-  export { playGame };
+export { playGame };
