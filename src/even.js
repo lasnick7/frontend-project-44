@@ -21,7 +21,7 @@ function checkAnswer(answer) {
     return true;
   } if (answer === 'no' && randomNumber % 2 === 0) {
     // eslint-disable-next-line no-template-curly-in-string
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
+    console.log(`Your answer: '${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   } if (answer === 'no' && randomNumber % 2 !== 0) {
@@ -29,11 +29,11 @@ function checkAnswer(answer) {
     return true;
   } if (answer === 'yes' && randomNumber % 2 !== 0) {
     // eslint-disable-next-line no-template-curly-in-string
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
+    console.log(`Your answer: '${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   } else {
-    console.log(`'${answer}' is wrong answer ;(.`);
+    console.log(` Your answer: '${answer}' is wrong answer ;(.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   }
