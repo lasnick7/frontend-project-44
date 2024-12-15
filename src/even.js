@@ -21,25 +21,37 @@ function askQuestion() {
 export { askQuestion };
 
 function checkAnswer(answer) {
-  if (answer === 'yes' && randomNumber % 2 === 0) {
-    console.log('Correct!');
-    return true;
-  } if (answer === 'no' && randomNumber % 2 === 0) {
-    // eslint-disable-next-line no-template-curly-in-string
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
-    console.log(`Let's try again, ${name}!`);
+  const isEven = (number) => {
+    if (number % 2 === 0) {
+      return true;
+    }
     return false;
-  } if (answer === 'no' && randomNumber % 2 !== 0) {
-    console.log('Correct!');
-    return true;
-  } if (answer === 'yes' && randomNumber % 2 !== 0) {
-    // eslint-disable-next-line no-template-curly-in-string
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
-  } else {
-    console.log(`'${answer}' is wrong answer ;(.`);
-    console.log(`Let's try again, ${name}!`);
+  }
+  if (isEven(randomNumber) === true) {
+    if (answer === 'yes') {
+      console.log('Correct!');
+      return true;
+    } else if (answer === 'no') {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
+      console.log(`Let's try again, ${name}!`);
+      return false;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(.`);
+      console.log(`Let's try again, ${name}!`);
+    }
+  }
+  if (isEven(randomNumber) === false) {
+    if (answer === 'no') {
+      console.log('Correct!');
+      return true;
+    } else if (answer === 'yes') {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
+      console.log(`Let's try again, ${name}!`);
+      return false;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(.`);
+      console.log(`Let's try again, ${name}!`);
+    }
   }
 }
 
