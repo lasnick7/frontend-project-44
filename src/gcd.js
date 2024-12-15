@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-var name;
+let name;
 function welcomeUser() {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
@@ -9,10 +9,10 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-var randomNumber1;
-var randomNumber2;
-var answer;
-var question;
+let randomNumber1;
+let randomNumber2;
+let answer;
+let question;
 function askQuestion() {
   console.log('Find the greatest common divisor of given numbers.');
   randomNumber1 = Math.floor(Math.random() * 100) + 1;
@@ -25,7 +25,7 @@ function askQuestion() {
 
 export { askQuestion };
 
-var correctAnswer;
+let correctAnswer;
 function checkAnswer(answer) {
   const getGcd = (a, b) => {
     if (!b) {

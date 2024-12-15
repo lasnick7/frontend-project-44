@@ -9,11 +9,11 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-var randomOperator;
-var randomNumber1;
-var randomNumber2;
-var answer;
-var rquestion;
+let randomOperator;
+let randomNumber1;
+let randomNumber2;
+let answer;
+let rquestion;
 function askQuestion() {
   console.log('What is the result of the expression?');
   randomOperator = Math.floor(Math.random() * 3);
@@ -37,7 +37,7 @@ function askQuestion() {
 
 export { askQuestion };
 
-var correctAnswer;
+let correctAnswer;
 function checkAnswer(answer) {
   correctAnswer = eval(rquestion);
   if (Number(correctAnswer) === Number(answer)) {

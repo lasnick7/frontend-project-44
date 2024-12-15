@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-var name;
+
+let name;
 function welcomeUser() {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
@@ -8,8 +9,8 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-var answer;
-var randomNumber;
+let answer;
+let randomNumber;
 function askQuestion() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   randomNumber = Math.floor(Math.random() * 100) + 1;

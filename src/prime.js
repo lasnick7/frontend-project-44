@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-var name;
+let name;
 function welcomeUser() {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
@@ -9,8 +9,8 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-var randomNumber;
-var answer;
+let randomNumber;
+let answer;
 function askQuestion() {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   randomNumber = Math.floor(Math.random() * 100) + 1;

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-var name;
+let name;
 function welcomeUser() {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
@@ -9,15 +9,15 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-var answer;
-var correctAns;
+let answer;
+let correctAns;
 function askQuestion() {
-  var progressionColl = [];
-  var progressionStep;
-  var progressionString = '';
-  var progressionStart;
-  var progressionLength;
-  var replacerIndex;
+  let progressionColl = [];
+  let progressionStep;
+  let progressionString = '';
+  let progressionStart;
+  let progressionLength;
+  let replacerIndex;
   const getRandomArbitrary = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
