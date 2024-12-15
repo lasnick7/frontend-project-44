@@ -5,7 +5,9 @@ function welcomeUser() {
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 }
+
 export { welcomeUser };
+
 var answer;
 var randomNumber;
 function askQuestion() {
@@ -16,29 +18,28 @@ function askQuestion() {
 }
 export { askQuestion };
 function checkAnswer(answer) {
-  if (answer === 'yes' && randomNumber % 2 === 0) {
-    console.log('Correct!');
-    return true;
-  } if (answer === 'no' && randomNumber % 2 === 0) {
-    // eslint-disable-next-line no-template-curly-in-string
-    console.log(`Your answer: '${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
+  if (randomNumber % 2 === 0) {
+    if (answer === 'yes') {
+      console.log('Correct!');
+      return true;
+    }
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
-  } if (answer === 'no' && randomNumber % 2 !== 0) {
-    console.log('Correct!');
-    return true;
-  } if (answer === 'yes' && randomNumber % 2 !== 0) {
-    // eslint-disable-next-line no-template-curly-in-string
-    console.log(`Your answer: '${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
-  } else {
-    console.log(` Your answer: '${answer}' is wrong answer ;(.`);
+  }
+  if (randomNumber % 2 !== 0) {
+    if (answer === 'no') {
+      console.log('Correct!');
+      return true;
+    }
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   }
 }
+
 export { checkAnswer };
+
 function playGame() {
   let winCount = 0;
   while (winCount < 3) {
