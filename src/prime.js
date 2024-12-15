@@ -63,6 +63,7 @@ function playGame() {
       winCount += 1;
     } else {
       winCount = 0;
+      return;
     }
   }
   // eslint-disable-next-line no-restricted-globals, no-undef
