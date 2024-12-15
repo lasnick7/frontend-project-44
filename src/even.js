@@ -25,17 +25,19 @@ function checkAnswer(answer) {
     if (answer === 'yes') {
       console.log('Correct!');
       return true;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
+      return false;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
-    return false;
   }
   if (randomNumber % 2 !== 0) {
     if (answer === 'no') {
       console.log('Correct!');
       return true;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+      return false;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-    return false;
   }
 }
 
