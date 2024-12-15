@@ -26,8 +26,7 @@ function checkAnswer(answer) {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-    console.log(`Let's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
     return false;
   }
   if (randomNumber % 2 !== 0) {
@@ -35,8 +34,7 @@ function checkAnswer(answer) {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-    console.log(`Let's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
     return false;
   }
 }

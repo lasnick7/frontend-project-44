@@ -34,8 +34,7 @@ function checkAnswer(answer) {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-    console.log(`Let's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
     return false;
   }
   if (!isPrime(randomNumber)) {
@@ -44,8 +43,7 @@ function checkAnswer(answer) {
       return true;
     }
     // eslint-disable-next-line no-useless-escape
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
-    console.log(`Let's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.\nLet's try again, ${name}!`);
     return false;
   }
 }
