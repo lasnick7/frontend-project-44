@@ -12,7 +12,7 @@ export { welcomeUser };
 let answer;
 let correctAns;
 function askQuestion() {
-  let progressionColl = [];
+  const progressionColl = [];
   let progressionStep;
   let progressionString = '';
   let progressionStart;
@@ -30,12 +30,12 @@ function askQuestion() {
   for (let i = 1; i <= progressionLength; i += 1) {
     progressionColl.push(progressionStart);
     progressionStart += progressionStep;
-  };
+  }
   for (let k = 0; k < progressionColl.length; k += 1) {
     if (k === replacerIndex) {
-        progressionString += " ..";
+      progressionString += ' ..';
     } else {
-        progressionString += ` ${progressionColl[k]}`
+      progressionString += ` ${progressionColl[k]}`;
     }
   }
   console.log('What number is missing in the progression?');
@@ -51,30 +51,29 @@ function checkAnswer(answer) {
   if (Number(correctAns) === Number(answer)) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAns}'.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
   }
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAns}'.`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 }
 
 export { checkAnswer };
 
 function playGame() {
-    let winCount = 0;
-    while (winCount < 3) {
-      if (winCount == 0){
-        welcomeUser();
-      }
-      const answer = askQuestion();
-      if (checkAnswer(answer)) {
-        winCount += 1;
-      } else {
-        winCount = 0;
-      }
+  let winCount = 0;
+  while (winCount < 3) {
+    if (winCount === 0) {
+      welcomeUser();
     }
-    // eslint-disable-next-line no-restricted-globals, no-undef
-    console.log(`Congratulations, ${name}!`);
+    const answer = askQuestion();
+    if (checkAnswer(answer)) {
+      winCount += 1;
+    } else {
+      winCount = 0;
+    }
   }
+  // eslint-disable-next-line no-restricted-globals, no-undef
+  console.log(`Congratulations, ${name}!`);
+}
 
 export { playGame };

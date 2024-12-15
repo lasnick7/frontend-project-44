@@ -29,38 +29,37 @@ let correctAnswer;
 function checkAnswer(answer) {
   const getGcd = (a, b) => {
     if (!b) {
-        return a;
-      }
-      return getGcd(b, a % b);
+      return a;
     }
+    return getGcd(b, a % b);
+  };
   correctAnswer = getGcd(randomNumber1, randomNumber2);
   if (Number(correctAnswer) === Number(answer)) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
   }
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 }
 
 export { checkAnswer };
 
 function playGame() {
-    let winCount = 0;
-    while (winCount < 3) {
-      if (winCount == 0){
-        welcomeUser();
-      }
-      const answer = askQuestion();
-      if (checkAnswer(answer)) {
-        winCount += 1;
-      } else {
-        winCount = 0;
-      }
+  let winCount = 0;
+  while (winCount < 3) {
+    if (winCount === 0) {
+      welcomeUser();
     }
-    // eslint-disable-next-line no-restricted-globals, no-undef
-    console.log(`Congratulations, ${name}!`);
+    const answer = askQuestion();
+    if (checkAnswer(answer)) {
+      winCount += 1;
+    } else {
+      winCount = 0;
+    }
   }
+  // eslint-disable-next-line no-restricted-globals, no-undef
+  console.log(`Congratulations, ${name}!`);
+}
 
 export { playGame };

@@ -55,7 +55,7 @@ export { checkAnswer };
 function playGame() {
   let winCount = 0;
   while (winCount < 3) {
-    if (winCount == 0){
+    if (winCount === 0){
       welcomeUser();
     }
     const answer = askQuestion();

@@ -17,14 +17,16 @@ function askQuestion() {
   answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return answer;
 }
+
 export { askQuestion };
+
 function checkAnswer(answer) {
   if (randomNumber % 2 === 0) {
     if (answer === 'yes') {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   }
@@ -33,7 +35,7 @@ function checkAnswer(answer) {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   }

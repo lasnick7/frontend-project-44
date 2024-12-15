@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
 let name;
@@ -22,52 +23,50 @@ function askQuestion() {
 export { askQuestion };
 
 function checkAnswer(answer) {
-    const isPrime = (num) => {
-        for (let i = 2; i < num; i += 1) {
-            if (num % i === 0) return false;
-        }
-        return num !== 1;
+  const isPrime = (num) => {
+    for (let i = 2; i < num; i += 1) {
+      if (num % i === 0) return false;
     }
-    if (answer === 'yes' && isPrime(randomNumber)) {
-        console.log('Correct!');
-        return true;
-    } if (answer === 'no' && isPrime(randomNumber)) {
-        // eslint-disable-next-line no-template-curly-in-string
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
-        console.log(`Let's try again, ${name}!`);
-        return false;
-    } if (answer === 'no' && !(isPrime(randomNumber))) {
-        console.log('Correct!');
-        return true;
-    } if (answer === 'yes' && !(isPrime(randomNumber))) {
-        // eslint-disable-next-line no-template-curly-in-string
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was \'no\'.`);
-        console.log(`Let's try again, ${name}!`);
-        return false;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(.`);
-        console.log(`Let's try again, ${name}!`);
+    return num !== 1;
+  };
+  if (isPrime(randomNumber)) {
+    if (answer === 'yes') {
+      console.log('Correct!');
+      return true;
     }
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
+    console.log(`Let's try again, ${name}!`);
+    return false;
+  }
+  if (!isPrime(randomNumber)) {
+    if (answer === 'no') {
+      console.log('Correct!');
+      return true;
+    }
+    // eslint-disable-next-line no-useless-escape
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was \'yes\'.`);
+    console.log(`Let's try again, ${name}!`);
+    return false;
+  }
 }
-
 
 export { checkAnswer };
 
 function playGame() {
-    let winCount = 0;
-    while (winCount < 3) {
-      if (winCount == 0){
-        welcomeUser();
-      }
-      const answer = askQuestion();
-      if (checkAnswer(answer)) {
-        winCount += 1;
-      } else {
-        winCount = 0;
-      }
+  let winCount = 0;
+  while (winCount < 3) {
+    if (winCount === 0) {
+      welcomeUser();
     }
-    // eslint-disable-next-line no-restricted-globals, no-undef
-    console.log(`Congratulations, ${name}!`);
+    const answer = askQuestion();
+    if (checkAnswer(answer)) {
+      winCount += 1;
+    } else {
+      winCount = 0;
+    }
   }
+  // eslint-disable-next-line no-restricted-globals, no-undef
+  console.log(`Congratulations, ${name}!`);
+}
 
 export { playGame };
