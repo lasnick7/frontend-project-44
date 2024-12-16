@@ -11,12 +11,11 @@ function welcomeUser() {
 export { welcomeUser };
 
 let randomNumber;
-let answer;
 function askQuestion() {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   randomNumber = Math.floor(Math.random() * 100) + 1;
   // eslint-disable-next-line default-case
-  answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
+  const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return answer;
 }
 
@@ -27,7 +26,7 @@ function isPrime(num) {
     if (num % i === 0) return false;
   }
   return num !== 1;
-};
+}
 
 function checkAnswer(answer) {
   if (isPrime(randomNumber)) {
