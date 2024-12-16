@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+import {
+  wellcomeUser, askQuestion, checkAnswer, name,
+} from '../src/games/even.js';
+import playGame from '../src/playGame.js';
 
-import { playGame } from '../src/even.js';
-
-playGame();
+playGame(wellcomeUser, askQuestion, checkAnswer, name);

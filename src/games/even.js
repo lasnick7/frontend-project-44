@@ -1,35 +1,27 @@
-/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line import/no-mutable-exports
 let name;
-function welcomeUser() {
+function wellcomeUser() {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 }
 
-export { welcomeUser };
+export { wellcomeUser, name };
 
 let randomNumber;
 function askQuestion() {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   randomNumber = Math.floor(Math.random() * 100) + 1;
-  // eslint-disable-next-line default-case
   const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return answer;
 }
 
 export { askQuestion };
 
-function isPrime(num) {
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) return false;
-  }
-  return num !== 1;
-}
-
 function checkAnswer(answer) {
-  if (isPrime(randomNumber)) {
+  if (randomNumber % 2 === 0) {
     if (answer === 'yes') {
       console.log('Correct!');
       return true;
@@ -46,23 +38,3 @@ function checkAnswer(answer) {
 }
 
 export { checkAnswer };
-
-function playGame() {
-  let winCount = 0;
-  while (winCount < 3) {
-    if (winCount === 0) {
-      welcomeUser();
-    }
-    const answer = askQuestion();
-    if (checkAnswer(answer)) {
-      winCount += 1;
-    } else {
-      winCount = 0;
-      return;
-    }
-  }
-  // eslint-disable-next-line no-restricted-globals, no-undef
-  console.log(`Congratulations, ${name}!`);
-}
-
-export { playGame };

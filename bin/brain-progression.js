@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+import {
+  wellcomeUser, askQuestion, checkAnswer, name,
+} from '../src/games/progression.js';
+import playGame from '../src/playGame.js';
 
-import { playGame } from '../src/progression.js';
-
-playGame();
+playGame(wellcomeUser, askQuestion, checkAnswer, name);
