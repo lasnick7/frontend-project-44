@@ -9,12 +9,11 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-let answer;
 let randomNumber;
 function askQuestion() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   randomNumber = Math.floor(Math.random() * 100) + 1;
-  answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
+  const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
   return answer;
 }
 
@@ -25,19 +24,17 @@ function checkAnswer(answer) {
     if (answer === 'yes') {
       console.log('Correct!');
       return true;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
-      return false;
     }
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
+    return false;
   }
   if (randomNumber % 2 !== 0) {
     if (answer === 'no') {
       console.log('Correct!');
       return true;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-      return false;
     }
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+    return false;
   }
 }
 
@@ -46,7 +43,7 @@ export { checkAnswer };
 function playGame() {
   let winCount = 0;
   while (winCount < 3) {
-    if (winCount == 0){
+    if (winCount === 0) {
       welcomeUser();
     }
     const answer = askQuestion();
