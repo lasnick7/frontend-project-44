@@ -1,9 +1,7 @@
-function playGame(welcome, ask, check, name) {
+function playGame(welcome, ask, check) {
   let winCount = 0;
+  const userName = welcome();
   while (winCount < 3) {
-    if (winCount === 0) {
-      welcome();
-    }
     const answer = ask();
     if (check(answer)) {
       winCount += 1;
@@ -13,7 +11,7 @@ function playGame(welcome, ask, check, name) {
     }
   }
   // eslint-disable-next-line no-restricted-globals, no-undef
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 }
 
 export default playGame;

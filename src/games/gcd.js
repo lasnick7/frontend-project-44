@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/no-mutable-exports
-let name;
+let globalName;
 function wellcomeUser() {
   console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
+  globalName = name;
+  return name;
 }
 
-export { wellcomeUser, name };
+export { wellcomeUser };
 
 let randomNumber1;
 let randomNumber2;
@@ -39,7 +41,7 @@ function checkAnswer(answer) {
     return true;
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${name}!`);
+  console.log(`Let's try again, ${globalName}!`);
   return false;
 }
 
