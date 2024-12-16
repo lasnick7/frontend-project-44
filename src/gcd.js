@@ -11,7 +11,6 @@ export { welcomeUser };
 
 let randomNumber1;
 let randomNumber2;
-let answer;
 let question;
 function askQuestion() {
   console.log('Find the greatest common divisor of given numbers.');
@@ -19,7 +18,7 @@ function askQuestion() {
   randomNumber2 = Math.floor(Math.random() * 100) + 1;
   question = `${randomNumber1} ${randomNumber2}`;
   // eslint-disable-next-line default-case
-  answer = readlineSync.question(`Question: ${question}\nYour answer: `);
+  const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
   return answer;
 }
 

@@ -28,14 +28,12 @@ function checkAnswer(answer) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
     return false;
   }
-  if (randomNumber % 2 !== 0) {
-    if (answer === 'no') {
-      console.log('Correct!');
-      return true;
-    }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-    return false;
+  if (answer === 'no') {
+    console.log('Correct!');
+    return true;
   }
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+  return false;
 }
 
 export { checkAnswer };

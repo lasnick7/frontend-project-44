@@ -9,13 +9,12 @@ function welcomeUser() {
 
 export { welcomeUser };
 
-function getRandomNumber(min, max){
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}; 
+function getRandomNumber(min, max) {
+  newMin = Math.ceil(min);
+  newMax = Math.floor(max);
+  return Math.floor(Math.random() * (newMax - newMin + 1)) + newMin;
+}
 
-let answer;
 let correctAnswer;
 function askQuestion() {
   const progressionColl = [];
@@ -31,7 +30,7 @@ function askQuestion() {
   const progressionString = progressionColl.join(' ');
   console.log('What number is missing in the progression?');
   // eslint-disable-next-line default-case
-  answer = readlineSync.question(`Question: ${progressionString}\nYour answer: `);
+  const answer = readlineSync.question(`Question: ${progressionString}\nYour answer: `);
   correctAnswer = replacedElement;
   return answer;
 }
